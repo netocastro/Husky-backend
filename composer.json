@@ -1,7 +1,7 @@
 {
     "name": "neto-pc/husky",
     "description": "backend feito para desafio da Husky.",
-    "type": "project",
+    "type": "project", 
     "license": "MIT",
     "autoload": {
         "psr-4": {
