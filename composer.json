@@ -1,0 +1,19 @@
+{
+    "name": "neto-pc/husky",
+    "description": "backend feito para desafio da Husky.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "NetoPc\\Husky\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Neto Castro",
+            "email": "netocastrotec@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
