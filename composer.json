@@ -15,5 +15,8 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "stonks/datalayer": "^1.0",
+        "stonks/router": "^1.0"
+    }
 }

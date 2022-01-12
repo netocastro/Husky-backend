@@ -7,6 +7,11 @@ namespace Composer\Autoload;
 class ComposerStaticInit036d41eb8771cff4c1f7ca247ac4cc3e
 {
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Stonks\\Router\\' => 14,
+            'Stonks\\DataLayer\\' => 17,
+        ),
         'N' => 
         array (
             'NetoPc\\Husky\\' => 13,
@@ -14,6 +19,14 @@ class ComposerStaticInit036d41eb8771cff4c1f7ca247ac4cc3e
     );
 
     public static $prefixDirsPsr4 = array (
+        'Stonks\\Router\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stonks/router/src',
+        ),
+        'Stonks\\DataLayer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stonks/datalayer/src',
+        ),
         'NetoPc\\Husky\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
