@@ -5,8 +5,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "NetoPc\\Husky\\": "src/"
-        }
+            "Source\\": "src/"
+        },
+        "files": [
+            "src/Core/Config.php",
+            "src/Core/Functions.php"
+        ]
     },
     "authors": [
         {

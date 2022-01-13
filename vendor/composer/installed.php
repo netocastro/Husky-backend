@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '222b634b9d5afad9fa41264c2085487b955babdf',
+        'reference' => '13c2d1355a420c6e391e8fa2ef3b412d9b58bf84',
         'name' => 'neto-pc/husky',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '222b634b9d5afad9fa41264c2085487b955babdf',
+            'reference' => '13c2d1355a420c6e391e8fa2ef3b412d9b58bf84',
             'dev_requirement' => false,
         ),
         'stonks/datalayer' => array(

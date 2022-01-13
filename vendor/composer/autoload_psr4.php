@@ -8,5 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'Stonks\\Router\\' => array($vendorDir . '/stonks/router/src'),
     'Stonks\\DataLayer\\' => array($vendorDir . '/stonks/datalayer/src'),
-    'NetoPc\\Husky\\' => array($baseDir . '/src'),
+    'Source\\' => array($baseDir . '/src'),
 );

@@ -6,15 +6,17 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit036d41eb8771cff4c1f7ca247ac4cc3e
 {
+    public static $files = array (
+        '73b5c9e082c8ee9d0fba1d3c44c307de' => __DIR__ . '/../..' . '/src/Core/Config.php',
+        'a1ecd73b417c7290440a1c048edaafda' => __DIR__ . '/../..' . '/src/Core/Functions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
             'Stonks\\Router\\' => 14,
             'Stonks\\DataLayer\\' => 17,
-        ),
-        'N' => 
-        array (
-            'NetoPc\\Husky\\' => 13,
+            'Source\\' => 7,
         ),
     );
 
@@ -27,7 +29,7 @@ class ComposerStaticInit036d41eb8771cff4c1f7ca247ac4cc3e
         array (
             0 => __DIR__ . '/..' . '/stonks/datalayer/src',
         ),
-        'NetoPc\\Husky\\' => 
+        'Source\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
