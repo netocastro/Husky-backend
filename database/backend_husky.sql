@@ -37,13 +37,13 @@ CREATE TABLE `deliveries`(
     `id` INTEGER AUTO_INCREMENT,
     `user_id` INTEGER NOT NULL,
     `motoboy_id` INTEGER DEFAULT NULL,
-    `status` INTEGER NOT NULL,
+    `status` INTEGER NOT NULL,  -- trocar aqui por status_id
     `collection_address` VARCHAR(200) NOT NULL,
     `destination_address` VARCHAR(200) NOT NULL,
     `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-    PRIMARY KEY(id)
+    PRIMARY KEY(id) 
 );
 
 ALTER TABLE `deliveries` ADD FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE;

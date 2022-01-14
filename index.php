@@ -8,6 +8,10 @@ $route = new Router(BASE_PATH);
 
 $route->namespace("Source\Controllers");
 
+$route->group('web');
+
+$route->post('/', "Web:filterDeliveries", "web.filterDeliveries");
+
 $route->group('status');
 
 $route->get('/', "StatusController:index", "status.index");
@@ -39,6 +43,10 @@ $route->get('/{id}', "DeliveryController:show", "delivery.show");
 $route->post('/', "DeliveryController:store", "delivery.store");
 $route->put('/{id}', "DeliveryController:update", "delivery.update");
 $route->delete('/{id}', "DeliveryController:delete", "delivery.delete");
+
+$route->get('/status/{id}', "DeliveryController:status", "delivery.status");
+
+
 
 $route->dispatch();
 

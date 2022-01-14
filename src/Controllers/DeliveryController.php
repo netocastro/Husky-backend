@@ -4,17 +4,36 @@ namespace Source\Controllers;
 
 use Source\Models\Delivery;
 
+/**
+ * @OA\Info(title="Controller Delivery", version="1.0")
+ */
 class DeliveryController
 {
+    /** 
+     * @OA\Get(path="/delivery", tags={"delivery"},
+     * @OA\Response (response="200", description="Success"),
+     * @OA\Response (response="404", description="Not found"),
+     * )
+     */
     public function index(): void
     {
-        echo json_encode(objectToArray((new Delivery())->find()->fetch(true)));
+        $devilery = (new Delivery())->find()->fetch(true);
+
+        foreach ($devilery as $value) {
+            $value->data()->user_name = $value->user_name();
+            $value->data()->motoboy_name = $value->motoboy_name();
+            $value->data()->status_name = $value->status_name();
+        }
+
+        echo json_encode(objectToArray($devilery));
     }
 
     public function store(array $data): void
     {
+        //echo json_encode($data);
+        //exit;
         $motoboyId = null;
-        if(isset($data['motoboy_id'])){
+        if (isset($data['motoboy_id'])) {
             $motoboyId = filter_var($data['motoboy_id'], FILTER_SANITIZE_NUMBER_INT);
         }
 
@@ -31,18 +50,22 @@ class DeliveryController
             echo json_encode($delivery->fail()->getMessage());
             return;
         }
-        echo json_encode("Delivery salvo!");
+        echo json_encode(["success" => "salvo com sucesso"]);
     }
 
     public function show(array $data): void
     {
         $id = filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT);
 
+        /** @var $delivery Delivery */
         $delivery = (new Delivery())->findById($id);
         if ($delivery) {
+            $delivery->data()->user_name = $delivery->user_name();
+            $delivery->data()->motoboy_name = $delivery->motoboy_name();
+            $delivery->data()->status_name = $delivery->status_name();
             echo json_encode(objectToArray($delivery));
         } else {
-            echo json_encode("entrega não caadstrada");
+            echo json_encode("Entrega não cadastrada");
         }
     }
 
@@ -85,6 +108,18 @@ class DeliveryController
             echo json_encode("Delivery deletado!");
         } else {
             echo json_encode("Delivery inválido.");
+        }
+    }
+
+    /** Site */
+    public function status(array $data): void
+    {
+        $id = filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT);
+        $delivery = (new Delivery())->find("status = :s", "s={$id}")->fetch(true);
+        if ($delivery) {
+            echo json_encode(objectToArray($delivery));
+        } else {
+            echo json_encode("entrega não caadstrada");
         }
     }
 }
