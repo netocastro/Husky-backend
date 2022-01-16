@@ -10,4 +10,5 @@ Requisições para a API devem seguir os padrões:
 | `DELETE` | /user/{id} | Deleta um usuário específico através do id no banco de dados. |
 
 
-ssssaa
+ssssaaasdasdasdasds
+asd
