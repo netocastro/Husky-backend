@@ -9,6 +9,4 @@ Requisições para a API devem seguir os padrões:
 | `PUT` | /user/{id} | Atualiza as informações de um usuário específico através do id no banco de dados.|
 | `DELETE` | /user/{id} | Deleta um usuário específico através do id no banco de dados. |
 
-
-ssssaaasdasdasdasds
-asd
+git status
