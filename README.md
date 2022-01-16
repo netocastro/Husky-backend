@@ -58,19 +58,18 @@ Exemplo DATA_LAYER_CONFIG:
 
 O BASE_PATH reconhece automaticamente se o servidor é HTTP ou HTTPS.
 Se você estiver utilizando um certificado SSL, descomente as linhas 10, 11 e 12 no arquivo .htaccess
-que se encontra na raiz do projeto removendo o "#". Depois disso é so acessar o projeto através do
-navegador, cliente de API REST como insomnia e postman ou através da documentação da dessa API com swagger, apartir da rota /documentation pra poder fazer as requisicões com swagger.
-Ex: http://localhost/documentation
+que se encontra na raiz do projeto, removendo o "#". Depois disso é so acessar o projeto através do
+navegador, cliente de API REST como insomnia e postman ou através da documentação da dessa API, apartir da rota /documentation pra poder fazer as requisicões com swagger.
+    Ex: http://localhost/documentation
 
-<h1>Explicando o Backend</h1>
+### Explicando o Backend
 
 O backend possui o CRUD de todas as poderão ser acessadas através do swagger.
 
-
-# Métodos
+## Métodos
 Requisições para a API devem seguir os padrões:
 
-## Users
+### Users
 | Método | URI | Descrição |
 |---|---|---|
 | `GET` | /user | Retorna todos os registros de usuários do banco de dados.|
