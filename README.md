@@ -59,7 +59,7 @@ Exemplo DATA_LAYER_CONFIG:
 O BASE_PATH reconhece automaticamente se o servidor é HTTP ou HTTPS.
 Se você estiver utilizando um certificado SSL, descomente as linhas 10, 11 e 12 no arquivo .htaccess
 que se encontra na raiz do projeto, removendo o "#". Depois disso é so acessar o projeto através do
-navegador, cliente de API REST como insomnia e postman ou através da documentação da dessa API, apartir da rota /documentation pra poder fazer as requisicões com swagger.
+navegador, cliente de API REST como insomnia e postman ou através da documentação da dessa API, apartir da rota /documentation pra poder fazer as requisições com swagger.
 
     Ex: http://localhost/documentation
 
@@ -79,7 +79,7 @@ Requisições para a API devem seguir os padrões:
 | `PUT` | /user/{id} | Atualiza as informações de um usuário específico através do id no banco de dados.|
 | `DELETE` | /user/{id} | Deleta um usuário específico através do id no banco de dados. |
 
-## Motoboys
+### Motoboys
 | Método | URI | Descrição |
 |---|---|---|
 | `GET` | /motoboy | Retorna todos os registros de motoboys do banco de dados.|
@@ -88,7 +88,7 @@ Requisições para a API devem seguir os padrões:
 | `PUT` | /motoboy/{id} | Atualiza as informações de um motoboy específico através do id no banco de dados.|
 | `DELETE` | /motoboy/{id} | Deleta um motoboy específico através do id no banco de dados. |
 
-## Status
+### Status
 | Método | URI | Descrição |
 |---|---|---|
 | `GET` | /status | Retorna todos os registros de status do banco de dados.|
@@ -98,7 +98,7 @@ Requisições para a API devem seguir os padrões:
 | `DELETE` | /status/{id} | Deleta um status específico através do id no banco de dados. |
 
 
-## Delivery
+### Delivery
 | Método | URI | Descrição |
 |---|---|---|
 | `GET` | /delivery | Retorna todos os registros de deliveries do banco de dados.|
@@ -119,7 +119,7 @@ de alterar as rotas padrões. Nela se pode faze requisoções como alterar apena
 
 # Frontend
 
-### Recursos disponiveis 
+### Recursos disponíveis 
 
 * Acesso a todos os pedidos
 * troca de motoboys dos pedidos
@@ -128,6 +128,7 @@ de alterar as rotas padrões. Nela se pode faze requisoções como alterar apena
 * Criação de pedidos
 * Filtro de Pedidos por motoboys
 * Filtro de Pedidos por status
+* Filtro de Pedidos entre Motoboys e status
 
 ### Como usar o front End
 
@@ -138,3 +139,5 @@ com informações de usuários, motoboys, status, endereços de coleta, e endere
 ## Observações
 
 + O BANCO DE DADOS FOI CRIARDO DE FORMA SIMPLES E OBJETIVA PARA ESSE PROJETO VIZANDO EXECUTAR O DESAFIO DE FORMA SUCINTA.
+
++ NÃO FORAM FEITAS TODAS AS VALIDAÇÕES POSSÍVEIS NO FRONTEND.
