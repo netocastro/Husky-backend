@@ -1,6 +1,6 @@
 ## Métodos
 Requisições para a API devem seguir os padrões:
-| Método | Descrição |
+| Método | Descrição |  ff
 |---|---|
 | `GET` | /user | Retorna todos os registros de usuários do banco de dados.|
 | `GET` | /user/{id} | Retorna as informações de um usuário específico através do id no banco de dados. |
