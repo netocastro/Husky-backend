@@ -2,7 +2,7 @@
     Essa é uma API foi construida para um desafio da Husky. Ela simula uma aplicação que gerencia
     entregas de delivery, onde se pode manipular os pedidos de um usuário.
 
-    <h1>Projeto</h1>
+## Projeto
 
     Essa aplicação é feita com PHP puro e utiliza todas as normas de programação seguindo as PSRs(PHP Standards Recommendations), arquitetura e padrões de projeto como MVC , Active Record e Layer Supertype;
 
@@ -13,8 +13,7 @@
     *Composer
 
 
-
-    <h1>Instalação do Backend</h1>
+## Instalação do Backend
 
     *Coloque a pasta <nome da pasta> dentro do diretório público seu servidor Apache.
 
@@ -28,20 +27,20 @@
     constante BASE_PATH para o diretorio no qual vc colocou a pasta do projeto.
     Também terá que editar a constante DATA_LAYER_CONFIG com as informações do seu banco de dados.
 
-### Exemplo BASE_PATH:
+#### Exemplo BASE_PATH:
 
-    ```
+
 
     $s = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 's' : '');
 
 		define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}");
 
-    ```
+ 
 
 
-## Exemplo DATA_LAYER_CONFIG:
+### Exemplo DATA_LAYER_CONFIG:
 
-    ```
+   
 		define('DATA_LAYER_CONFIG', [
 			'driver' => 'mysql',  
 			'host' => 'localhost',          // nome do seu host
@@ -57,7 +56,7 @@
 			],
 		]);
 
-    ```
+    
 
 	O BASE_PATH reconhece automaticamente se o servidor é HTTP ou HTTPS.
 	Se você estiver utilizando um certificado SSL, descomente as linhas 10, 11 e 12 no arquivo .htaccess
@@ -110,3 +109,26 @@ Requisições para a API devem seguir os padrões:
 | `PUT` | /delivery/{id} | Atualiza as informações de um delivery específico através do id no banco de dados.|
 | `DELETE` | /delivery/{id} | Deleta um delivery específico através do id no banco de dados. |
 
++ Request (application/json)
+
+    + Body
+
+            {
+                "code": "1rbUURjcp1KErn7Jgx7d",
+                "client_id": "e70654d7f568d0",
+                "client_secret": "156762a28c007a64ff",
+                "redirect_uri": "urn:ietf:wg:oauth:2.0:oob:auto",
+                "grant_type": "authorization_code"
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "access_token": "[access_token]",
+                "token_type": "Bearer",
+                "expires_in": 900,
+                "refresh_token": "[refresh_token]",
+                "personal_token": "[token_string]"
+            }
