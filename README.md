@@ -4,7 +4,7 @@ entregas de delivery, onde se pode manipular os pedidos de um usuário.
 
 ## Projeto
 
-Essa aplicação é feita com PHP puro e utiliza todas as normas de programação seguindo as PSRs(PHP Standards Recommendations), arquitetura e padrões de projeto como MVC , Active Record e Layer Supertype;
+Essa aplicação é feita com PHP puro e utiliza todas as normas de programação seguindo as PSRs( PHP Standards Recommendations ), arquitetura e padrões de projeto como MVC , Active Record e Layer Supertype;
 
 ### Requistos para rodar a API
 + Servidor Apache (wamp,xampp ou qualquer um de sua preferência)
@@ -18,7 +18,7 @@ Essa aplicação é feita com PHP puro e utiliza todas as normas de programaçã
 + Coloque a pasta <nome da pasta> dentro do diretório público seu servidor Apache.
 
 + Abra o terminal dentro da raiz do projeto e execute o comando: "composer update" (sem as aspas),
-pra ter certeza que não falta alguem componente componente.
+pra ter certeza que não falta algum componente.
 
 + Na raiz do projeto, na pasta database execute o arquivo database.sql em seu SGBD  para criar as tabelas
 e popular o banco de dados.
@@ -31,7 +31,12 @@ Exemplo BASE_PATH:
     
     $s = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 's' : '');
 
-	define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}");
+    Se o aquivo foi extraído para a raiz da sua pasta pública, matenha a constante assim:
+
+	define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}");  
+
+    Caso não, edite para o diretório onde vc colocou a pasta, assim:
+    define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}/<minha_pasta>/<sub_pasta>");  
 
 Exemplo DATA_LAYER_CONFIG:
    
