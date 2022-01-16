@@ -6,6 +6,21 @@ use Source\Models\User;
 
 class UserController
 {
+    /**
+     * 
+     * @OA\Get(
+     *     path="/development/entrevistas/Husky/user",
+     *     tags={"User"},
+     *     summary="Retorna o registro de todos os usuários.",
+     *         *     @OA\Response(
+     *         response=200,
+     *         description="successful operation",
+     *         @OA\JsonContent(
+     *             type="string"
+     *         ),
+     *     ),
+     * )
+     */
     public function index(): void
     {
         echo json_encode(objectToArray((new User())->find()->fetch(true)));
@@ -23,7 +38,7 @@ class UserController
             return;
         }
 
-        echo json_encode("Usuario salvo!");
+        echo json_encode(["success" => "salvo com sucesso"]);
     }
 
     public function show(array $data): void
@@ -47,9 +62,33 @@ class UserController
             return;
         }
 
-        echo json_encode("Usuario atualizado!");
+        echo json_encode(["success" => "atualizado com sucesso"]);
     }
 
+    /**
+     * @OA\Delete(
+     *     path="/development/entrevistas/Husky/user/{id} ",
+     *     tags={"User"},
+     *     summary="Deleta um registro de usuario.",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="id do usuario que precisa apagar",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Invalid username supplied",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User not found",
+     *     )
+     * )
+     */
     public function delete(array $data): void
     {
         $id = filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT);
@@ -58,8 +97,8 @@ class UserController
 
         if ($user) {
             $user->destroy();
-            echo json_encode("Usuario deletado!");
-        }else{
+            echo json_encode(["success" => "deletado com sucesso"]);
+        } else {
             echo json_encode("usuario inválido.");
         }
     }

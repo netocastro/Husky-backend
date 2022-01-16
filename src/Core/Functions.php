@@ -7,7 +7,6 @@ function debug($data)
     echo"</pre>";   
 }
 
-
 /**
  * Transforma objetos do tipo DataLayer em arrays
  */

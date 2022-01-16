@@ -9,10 +9,22 @@ use Source\Models\Delivery;
  */
 class DeliveryController
 {
-    /** 
-     * @OA\Get(path="/delivery", tags={"delivery"},
-     * @OA\Response (response="200", description="Success"),
-     * @OA\Response (response="404", description="Not found"),
+    /**
+     * 
+     * Essa rota foi editada para não retonar apenas os valores do campos da tabela delivery, 
+     * mas também para retornar o nome do status, nome do motoboy, e nome de seus respectivos ids.
+     * 
+     * @OA\Get(
+     *     path="/development/entrevistas/Husky/delivery",
+     *     tags={"Delivery"},
+     *     summary="Retorna o registro de todas as entregas.",
+     *     @OA\Response(
+     *         response=200,
+     *         description="successful operation",
+     *         @OA\JsonContent(
+     *             type="string"
+     *         ),
+     *     ),
      * )
      */
     public function index(): void
@@ -24,16 +36,14 @@ class DeliveryController
             $value->data()->motoboy_name = $value->motoboy_name();
             $value->data()->status_name = $value->status_name();
         }
-
         echo json_encode(objectToArray($devilery));
     }
 
+
     public function store(array $data): void
     {
-        //echo json_encode($data);
-        //exit;
         $motoboyId = null;
-        if (isset($data['motoboy_id'])) {
+        if ($data['motoboy_id'] != 0) {
             $motoboyId = filter_var($data['motoboy_id'], FILTER_SANITIZE_NUMBER_INT);
         }
 
@@ -63,14 +73,87 @@ class DeliveryController
             $delivery->data()->user_name = $delivery->user_name();
             $delivery->data()->motoboy_name = $delivery->motoboy_name();
             $delivery->data()->status_name = $delivery->status_name();
+            if ($delivery->motoboy_id == null) {
+                $delivery->motoboy_id = "0";
+            }
+
             echo json_encode(objectToArray($delivery));
         } else {
             echo json_encode("Entrega não cadastrada");
         }
     }
 
+    /**
+     * @OA\Put(
+     *     path="/development/entrevistas/Husky/delivery/{id} ",
+     *     tags={"Delivery"},
+     *     summary="Atualiza uma entrega.",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="id do usuario para atualizar",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *      @OA\Parameter(
+     *         name="collection_address",
+     *         in="query",
+     *         description="Endereço de coleta",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *      @OA\Parameter(
+     *         name="destination_address",
+     *         in="query",
+     *         description="Endereço de destino",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Parameter(
+     *         name="user_id",
+     *         in="query",
+     *         description="Id do usuario",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Parameter(
+     *         name="motoboy_id",
+     *         in="query",
+     *         description="Id do motoboy",
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Parameter(
+     *         name="status",
+     *         in="query",
+     *         description="Id do status",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Invalid username supplied",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User not found",
+     *     )
+     * )
+     */
     public function update(array $data): void
     {
+        echo json_encode($data);exit;
         $data = filter_var_array($data, [
             "id" => FILTER_SANITIZE_NUMBER_INT,
             "user_id" => FILTER_SANITIZE_NUMBER_INT,
@@ -80,10 +163,15 @@ class DeliveryController
             "destination_address" => FILTER_SANITIZE_STRIPPED,
         ]);
 
+        $motoboyId = null;
+        if ($data['motoboy_id'] != 0) {
+            $motoboyId = filter_var($data['motoboy_id'], FILTER_SANITIZE_NUMBER_INT);
+        }
+
         $delivery = (new Delivery())->findById($data['id']);
 
         $delivery->user_id = $data['user_id'];
-        $delivery->motoboy_id = $data['motoboy_id'];
+        $delivery->motoboy_id = $motoboyId;
         $delivery->collection_address = $data['collection_address'];
         $delivery->destination_address = $data['destination_address'];
         $delivery->status = $data['status'];
@@ -94,9 +182,40 @@ class DeliveryController
             echo json_encode($delivery->fail()->getMessage());
             return;
         }
-        echo json_encode("Delivery atualizado!");
+        /**
+         * Esse retono esta dessa forma pra facilitar na implementação do front end, pode ser qualquer
+         * coisa necessaria para o projeto.
+         */
+        echo json_encode([
+            "success" => "atualizado com sucesso",
+            "id" => $data['id']
+        ]);
     }
 
+    /**
+     * @OA\Delete(
+     *     path="/development/entrevistas/Husky/delivery/{id} ",
+     *     tags={"Delivery"},
+     *     summary="Deleta o registro de uma entrega.",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="id da entrega que precisa apagar",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Invalid username supplied",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User not found",
+     *     )
+     * )
+     */
     public function delete(array $data): void
     {
         $id = filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT);
@@ -105,21 +224,9 @@ class DeliveryController
 
         if ($delivery) {
             $delivery->destroy();
-            echo json_encode("Delivery deletado!");
+            echo json_encode(["success" => "deletado com sucesso"]);
         } else {
-            echo json_encode("Delivery inválido.");
+            echo json_encode("Entrega invalida.");
         }
-    }
-
-    /** Site */
-    public function status(array $data): void
-    {
-        $id = filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT);
-        $delivery = (new Delivery())->find("status = :s", "s={$id}")->fetch(true);
-        if ($delivery) {
-            echo json_encode(objectToArray($delivery));
-        } else {
-            echo json_encode("entrega não caadstrada");
-        }
-    }
+    }   
 }

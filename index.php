@@ -8,9 +8,20 @@ $route = new Router(BASE_PATH);
 
 $route->namespace("Source\Controllers");
 
+$route->group(null);
+
+$route->get('/doc', "Web:doc", "web.doc");
+$route->get('/', function () {
+
+   echo "<h1 style='text-align:center; margin-top:250px;'>Em breve na nessa Rota Home estará a pagina da documentação</h1>";
+
+}, "web.home");
+
 $route->group('web');
 
-$route->post('/', "Web:filterDeliveries", "web.filterDeliveries");
+$route->post('/filterDeliveries', "Web:filterDeliveries", "web.filterDeliveries");
+$route->post('/changeStatusDelivery', "Web:changeStatusDelivery", "web.changeStatusDelivery");
+$route->post('/changeMotoboyDelivery', "Web:changeMotoboyDelivery", "web.changeMotoboyDelivery");
 
 $route->group('status');
 
@@ -45,8 +56,6 @@ $route->put('/{id}', "DeliveryController:update", "delivery.update");
 $route->delete('/{id}', "DeliveryController:delete", "delivery.delete");
 
 $route->get('/status/{id}', "DeliveryController:status", "delivery.status");
-
-
 
 $route->dispatch();
 

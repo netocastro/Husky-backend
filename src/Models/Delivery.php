@@ -29,14 +29,4 @@ class Delivery extends DataLayer
         return (new Status())->findById($this->status)->name;
     }
 
-   /* public function deliveryPrintJquery()
-    {
-        foreach ($this as $value) {
-            $value->data()->user_name = $value->user_name();
-            $value->data()->motoboy_name = $value->motoboy_name();
-            $value->data()->status_name = $value->status_name();
-        }
-
-        return $this;
-    }*/
 }

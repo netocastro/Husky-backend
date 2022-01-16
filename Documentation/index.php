@@ -38,7 +38,7 @@
     window.onload = function() {
       // Begin Swagger UI call region
       const ui = SwaggerUIBundle({
-        url: "https://localhost/development/entrevistas/Husky/Documentation/Api.php",
+        url: "https://localhost/development/entrevistas/Husky/documentation/Api.php",
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [
