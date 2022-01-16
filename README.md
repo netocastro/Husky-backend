@@ -28,14 +28,13 @@ constante BASE_PATH para o diretorio no qual vc colocou a pasta do projeto.
 Também terá que editar a constante DATA_LAYER_CONFIG com as informações do seu banco de dados.
 
 Exemplo BASE_PATH:
-    
-    $s = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 's' : '');
 
     Se o aquivo foi extraído para a raiz da sua pasta pública, matenha a constante assim:
 
 	define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}");  
 
     Caso não, edite para o diretório onde vc colocou a pasta, assim:
+
     define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}/<minha_pasta>/<sub_pasta>");  
 
 Exemplo DATA_LAYER_CONFIG:
@@ -44,9 +43,9 @@ Exemplo DATA_LAYER_CONFIG:
         'driver' => 'mysql',  
         'host' => 'localhost',          // nome do seu host
         'port' => '3306',
-        'dbname' => 'backend_husky',   // nome da database
-        'username' => 'root',          // usuário
-        'passwd' => '',				   // senha
+        'dbname' => 'backend_husky',    // nome da database
+        'username' => 'root',           // usuário
+        'passwd' => '',				    // senha
         'options' => [
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
