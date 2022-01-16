@@ -7,23 +7,23 @@ entregas de delivery, onde se pode manipular os pedidos de um usuário.
 Essa aplicação é feita com PHP puro e utiliza todas as normas de programação seguindo as PSRs(PHP Standards Recommendations), arquitetura e padrões de projeto como MVC , Active Record e Layer Supertype;
 
 ### Requistos para rodar a API
-+Servidor Apache (wamp,xampp ou qualquer um de sua preferência)
-+MySQL
-+PHP version 7.4
-+Composer
++ Servidor Apache (wamp,xampp ou qualquer um de sua preferência)
++ MySQL
++ PHP version 7.4
++ Composer
 
 
 ## Instalação do Backend
 
-+Coloque a pasta <nome da pasta> dentro do diretório público seu servidor Apache.
++ Coloque a pasta <nome da pasta> dentro do diretório público seu servidor Apache.
 
-+Abra o terminal dentro da raiz do projeto e execute o comando: "composer update" (sem as aspas),
++ Abra o terminal dentro da raiz do projeto e execute o comando: "composer update" (sem as aspas),
 pra ter certeza que não falta alguem componente componente.
 
 + Na raiz do projeto, na pasta database execute o arquivo database.sql em seu SGBD  para criar as tabelas
 e popular o banco de dados.
 
-+Dentro da pasta src/Core se encontra o arquivo Config.php, nele vc precisa editar a
++ Dentro da pasta src/Core se encontra o arquivo Config.php, nele vc precisa editar a
 constante BASE_PATH para o diretorio no qual vc colocou a pasta do projeto.
 Também terá que editar a constante DATA_LAYER_CONFIG com as informações do seu banco de dados.
 
