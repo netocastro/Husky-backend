@@ -111,11 +111,11 @@ Requisições para a API devem seguir os padrões:
 Também foi criada uma Web, que serve para requisicões especificas do site, para não haver a necessidade
 de alterar as rotas padrões. Nela se pode faze requisoções como alterar apenas o status em uma tabela, alterar apenas o motoboy sem precisar as rotas padroes de crud. Essas rotas poderiam estar, se necessário dentro da rotas de suas respectivas tabelas, mas como são exclusivas para a função do site específico, optei por colocar em rotas diferentes.
 
-
-
-## Observações
-
-+ O BANCO DE DADOS FOI CRIARDO DE FORMA SIMPLES E OBJETIVA PARA ESSE PROJETO VIZANDO EXECUTAR O DESAFIO DE FORMA SUCINTA.
+| Método | URI | Descrição |
+|---|---|---|
+| `POST` | /filterDeliveries | Retorna o filtro da pesquisa de pedidos entre motoboys estatus no banco de dados.|
+| `POST` | /changeStatusDelivery | Atualiza apenas o status de um determinado pedido. |
+| `POST` | /changeMotoboyDelivery | Atualiza apenas o motoboy de um determinado pedido. |
 
 # Frontend
 
@@ -134,3 +134,7 @@ de alterar as rotas padrões. Nela se pode faze requisoções como alterar apena
 O frontend do site foi criado de forma bem simples e intuitiva atentendo os requisitos do desafio.
 Na página inicial há apenas um texto explicando sobre o que é o site. Na barra de navegação vc pode escolher entre vizualizar ou cadastrar as Entregas. Ao clicar em vizualizar vc terá acesso a todos os pedidos
 com informações de usuários, motoboys, status, endereços de coleta, e endereços de destino podendo filtra-lós por motoboy, por status ou pelos dois se quiser fazer uma pesquisa mais especifica como por exemplo, qual os status das entregas de um motoboy. Ao clicar do lado das informações existe um botão com o icone de um olho, nele vc se irá até a tela do pedido onde poderá  alterar o motoboy que fará a entrega e o status do pedido. Se clicar em editar poderá editar todas as informações do pedido. 
+
+## Observações
+
++ O BANCO DE DADOS FOI CRIARDO DE FORMA SIMPLES E OBJETIVA PARA ESSE PROJETO VIZANDO EXECUTAR O DESAFIO DE FORMA SUCINTA.
