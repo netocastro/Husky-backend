@@ -65,7 +65,7 @@ navegador, cliente de API REST como insomnia e postman ou através da documenta�
 
 ### Explicando o Backend
 
-O backend possui o CRUD de todas as poderão ser acessadas através do swagger.
+O backend possui o CRUD de todas as tabelas do banco e dados e poderão ser acessadas através do swagger.
 
 ## Métodos
 Requisições para a API devem seguir os padrões:
@@ -106,3 +106,31 @@ Requisições para a API devem seguir os padrões:
 | `POST` | /delivery | Insere um delivery no banco de dados. |
 | `PUT` | /delivery/{id} | Atualiza as informações de um delivery específico através do id no banco de dados.|
 | `DELETE` | /delivery/{id} | Deleta um delivery específico através do id no banco de dados. |
+
+### Web
+Também foi criada uma Web, que serve para requisicões especificas do site, para não haver a necessidade
+de alterar as rotas padrões. Nela se pode faze requisoções como alterar apenas o status em uma tabela, alterar apenas o motoboy sem precisar as rotas padroes de crud. Essas rotas poderiam estar, se necessário dentro da rotas de suas respectivas tabelas, mas como são exclusivas para a função do site específico, optei por colocar em rotas diferentes.
+
+
+
+## Observações
+
++ O BANCO DE DADOS FOI CRIARDO DE FORMA SIMPLES E OBJETIVA PARA ESSE PROJETO VIZANDO EXECUTAR O DESAFIO DE FORMA SUCINTA.
+
+# Frontend
+
+### Recursos disponiveis 
+
+* Acesso a todos os pedidos
+* troca de motoboys dos pedidos
+* troca de status do pedido
+* atualização de pedidos
+* Criação de pedidos
+* Filtro de Pedidos por motoboys
+* Filtro de Pedidos por status
+
+### Como usar o front End
+
+O frontend do site foi criado de forma bem simples e intuitiva atentendo os requisitos do desafio.
+Na página inicial há apenas um texto explicando sobre o que é o site. Na barra de navegação vc pode escolher entre vizualizar ou cadastrar as Entregas. Ao clicar em vizualizar vc terá acesso a todos os pedidos
+com informações de usuários, motoboys, status, endereços de coleta, e endereços de destino podendo filtra-lós por motoboy, por status ou pelos dois se quiser fazer uma pesquisa mais especifica como por exemplo, qual os status das entregas de um motoboy. Ao clicar do lado das informações existe um botão com o icone de um olho, nele vc se irá até a tela do pedido onde poderá  alterar o motoboy que fará a entrega e o status do pedido. Se clicar em editar poderá editar todas as informações do pedido. 
