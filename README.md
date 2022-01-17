@@ -1,6 +1,6 @@
 # Backend
 Essa é uma API foi construida para um desafio da Husky. Ela simula uma aplicação que gerencia
-entregas de delivery, onde se pode manipular os pedidos de um usuário.
+entregas de delivery, onde se pode manipular os pedidos dos usuários.
 
 ## Projeto
 
@@ -12,10 +12,9 @@ Essa aplicação é feita com PHP puro e utiliza todas as normas de programaçã
 + PHP version 7.4
 + Composer
 
-
 ## Instalação do Backend
 
-+ Coloque a pasta <nome da pasta> dentro do diretório público seu servidor Apache.
++ Coloque essa pasta de projeto dentro do diretório público seu servidor Apache.
 
 + Abra o terminal dentro da raiz do projeto e execute o comando: "composer update" (sem as aspas),
 pra ter certeza que não falta algum componente.
@@ -146,3 +145,6 @@ Na barra de navegação você pode escolher entre vizualizar ou cadastrar as Ent
 + NÃO FORAM FEITAS TODAS AS VALIDAÇÕES POSSÍVEIS NO FRONTEND.
 
 + A O TAMANHO DA PASTA DO PROJETO ESTÁ GRANDE POR CAUSA DA PASTA DO SWAGGER.
+
++ AS CHAVES ESTRANGEIRAS DA TA TABELA DELIVERY DEVEM SER ADCIONADAS DEPENDENDO DO REQUERIMENTO DO PROJETO.
+SENDO ASSIM, FORAM COLOCADAS TODAS AS CHAVES ESTRANGEIRAS COM UPDATE E DELETE CASCADE, DESSA FORMA OS AVALIADORES PODEM EXERCER O CRUD SEM SE PREOCUPAR COM AS RESTRIÇÕES.
