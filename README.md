@@ -14,7 +14,7 @@ Essa aplicação é feita com PHP puro e utiliza todas as normas de programaçã
 
 ## Instalação do Backend
 
-+ Coloque essa pasta de projeto dentro do diretório público seu servidor Apache.
++ Coloque essa pasta de projeto dentro do diretório público seu servidor Apache, de preferencia dentro da pasta raiz, como htdos ou www, assim não será necessário modificar as rotas no frontend. Caso não seja possível, será explicado como editar o frontend mais adiante.
 
 + Abra o terminal dentro da raiz do projeto e execute o comando: "composer update" (sem as aspas),
 pra ter certeza que não falta algum componente.
@@ -34,7 +34,7 @@ Exemplo BASE_PATH:
 
     Caso não, edite para o diretório onde vc colocou a pasta, assim:
 
-    define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}/<minha_pasta>/<sub_pasta>");  
+    define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}/<minha_pasta>");  
 
 Exemplo DATA_LAYER_CONFIG:
    
@@ -107,8 +107,8 @@ Requisições para a API devem seguir os padrões:
 | `DELETE` | /delivery/{id} | Deleta um delivery específico através do id no banco de dados. |
 
 ### Web
-Também foi criada uma Web, que serve para requisicões especificas do site, para não haver a necessidade
-de alterar as rotas padrões. Nela se pode faze requisoções como alterar apenas o status em uma tabela, alterar apenas o motoboy sem precisar as rotas padroes de crud. Essas rotas poderiam estar, se necessário dentro da rotas de suas respectivas tabelas, mas como são exclusivas para a função do site específico, optei por colocar em rotas diferentes.
+Também foi criada uma rota Web, que serve para requisicões específicas do site, para não haver a necessidade
+de alterar as rotas padrões. Nela se pode faze requisoções como alterar apenas o status em uma tabela, alterar apenas o motoboy sem precisar as rotas padroes do CRUD. Essas rotas poderiam estar, se necessário dentro da rotas de suas respectivas tabelas, mas como são exclusivas para a função do site específico, optei por colocar em rotas diferentes.
 
 | Método | URI | Descrição |
 |---|---|---|
@@ -137,6 +137,41 @@ Na barra de navegação você pode escolher entre vizualizar ou cadastrar as Ent
 
  Se quiser fazer uma pesquisa mais específica como por exemplo, qual os status das entregas de um motoboy.
  Ao lado das informações do pedido, existe um botão com o icone de um olho, nele vc se irá até a tela do pedido onde poderá alterar o motoboy que fará a entrega e o status do pedido. Se clicar em editar poderá editar todas as informações do pedido. 
+
+Por estarem em projetos diferentes, as URLs das requisições AJAX no frontend estão estáticas e são baseadas na URL do seu servidor. É necessário modificá-las com o caminho igual a da sua variável BASE_PATH no backend.
+
+Se seu servidor não possuir SSL eliminar o s em "https://".
+Exemplo:
+
+    Se decidir extrair todos os arquivos dentro da raiz da sua pasta pública, as requisições estaram assim
+
+	$.ajax({
+        url: 'https://localhost/status',
+        type: 'GET',
+        dataType: "JSON",
+        success: (data) => {
+            changeStatus(data);
+        },
+        error: (error) => {
+            console.log(error.responseText);
+        }
+    });
+
+    Se seguiu as recomendações da sessão sobre backend, não precisará modificar o frontend, então as requisições estaram assim:
+
+    $.ajax({
+        url: 'https://localhost/monorepo_husky/backend/status',
+        type: 'GET',
+        dataType: "JSON",
+        success: (data) => {
+            changeStatus(data);
+        },
+        error: (error) => {
+            console.log(error.responseText);
+        }
+    });
+
+    Basta jogar a pasta monorepo_husky dentro da raiz do servidor. 
 
 ## Observações
 
