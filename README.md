@@ -132,9 +132,12 @@ de alterar as rotas padrões. Nela se pode faze requisoções como alterar apena
 
 ### Como usar o front End
 
-O frontend do site foi criado de forma bem simples e intuitiva atentendo os requisitos do desafio.
-Na página inicial há apenas um texto explicando sobre o que é o site. Na barra de navegação vc pode escolher entre vizualizar ou cadastrar as Entregas. Ao clicar em vizualizar vc terá acesso a todos os pedidos
-com informações de usuários, motoboys, status, endereços de coleta, e endereços de destino podendo filtra-lós por motoboy, por status ou pelos dois se quiser fazer uma pesquisa mais especifica como por exemplo, qual os status das entregas de um motoboy. Ao clicar do lado das informações existe um botão com o icone de um olho, nele vc se irá até a tela do pedido onde poderá  alterar o motoboy que fará a entrega e o status do pedido. Se clicar em editar poderá editar todas as informações do pedido. 
+O frontend do site foi criado de forma bem simples e intuitiva atendendo os requisitos do desafio.Na página inicial há apenas um texto explicando sobre o que é o site. 
+
+Na barra de navegação você pode escolher entre vizualizar ou cadastrar as Entregas. Ao clicar em vizualizar vc terá acesso a todos os pedidos com informações de usuários, motoboys, status, endereços de coleta, e endereços de destino podendo filtra-lós por motoboy, por status ou pelos dois.
+
+ Se quiser fazer uma pesquisa mais específica como por exemplo, qual os status das entregas de um motoboy.
+ Ao lado das informações do pedido, existe um botão com o icone de um olho, nele vc se irá até a tela do pedido onde poderá alterar o motoboy que fará a entrega e o status do pedido. Se clicar em editar poderá editar todas as informações do pedido. 
 
 ## Observações
 
