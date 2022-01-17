@@ -14,7 +14,7 @@ Essa aplicação é feita com PHP puro e utiliza todas as normas de programaçã
 
 ## Instalação do Backend
 
-+ Coloque a pasta desse projeto dentro da raiz diretório público seu servidor Apache, de preferência, como htdos ou WWW, assim não será necessário modificar as rotas no frontend. Caso não seja possível, será explicado como editar o frontend mais adiante.
++ Coloque a pasta desse projeto dentro da raiz diretório público seu servidor Apache, de preferência, como htdocs ou WWW, assim não será necessário modificar as rotas no frontend. Caso não seja possível, será explicado como editar o frontend mais adiante.
 
 + Abra o terminal dentro da raiz do projeto e execute o comando: "composer update" (sem as aspas),
 pra ter certeza que não falta algum componente.
