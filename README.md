@@ -14,7 +14,7 @@ Essa aplicação é feita com PHP puro e utiliza todas as normas de programaçã
 
 ## Instalação do Backend
 
-+ Coloque essa pasta de projeto dentro do diretório público seu servidor Apache, de preferencia dentro da pasta raiz, como htdos ou www, assim não será necessário modificar as rotas no frontend. Caso não seja possível, será explicado como editar o frontend mais adiante.
++ Coloque a pasta desse projeto dentro da raiz diretório público seu servidor Apache, de preferência, como htdos ou WWW, assim não será necessário modificar as rotas no frontend. Caso não seja possível, será explicado como editar o frontend mais adiante.
 
 + Abra o terminal dentro da raiz do projeto e execute o comando: "composer update" (sem as aspas),
 pra ter certeza que não falta algum componente.
@@ -143,7 +143,7 @@ Por estarem em projetos diferentes, as URLs das requisições AJAX no frontend e
 Se seu servidor não possuir SSL eliminar o s em "https://".
 Exemplo:
 
-    Se decidir extrair todos os arquivos dentro da raiz da sua pasta pública, as requisições estaram assim
+    Se decidir extrair todos os arquivos da pasta do backend dentro da raiz da sua pasta pública, as requisições devem ser feitas assim assim,:
 
 	$.ajax({
         url: 'https://localhost/status',
@@ -170,8 +170,7 @@ Exemplo:
             console.log(error.responseText);
         }
     });
-
-    Basta jogar a pasta monorepo_husky dentro da raiz do servidor. 
+    
 
 ## Observações
 
